@@ -5,7 +5,7 @@
     <h2>Список всех фильмов</h2>
     <ul>
         {% for item in movies %}
-            <li>Название фильма{{ item.name }}, Рейтинг - {{ item.rating }},
+            <li>Название фильма <a href="{{ item.get_url }}">{{ item.name }}</a>>, Рейтинг - {{ item.rating }},
                 год-{{ item.year|default:"Неизвестен" }}
             </li>
         {% endfor %}
