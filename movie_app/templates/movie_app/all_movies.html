@@ -13,4 +13,9 @@
             </li>
         {% endfor %}
     </ul>
+    <h3>Всего фильмов - {{ aggregate.id__count }}</h3>
+    <h3>Общий бюджет - {{ aggregate.budget__sum }}</h3>
+    <h3>Средний бюджет - {{ aggregate.budget__avg }}</h3>
+    <h3>Минимальный рейтинг -  {{ aggregate.rating__min }}</h3>
+    <h3>Максимальный рейтинг -  {{ aggregate.rating__max }}</h3>
 {% endblock %}
