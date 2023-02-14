@@ -1,9 +1,10 @@
 from django.contrib import admin, messages
-from .models import Movie, Director
+from .models import Movie, Director, Actor
 from django.db.models import QuerySet
 
 
 admin.site.register(Director)
+admin.site.register(Actor)
 
 
 class RatingFilter(admin.SimpleListFilter):
@@ -41,6 +42,7 @@ class MovieAdmin(admin.ModelAdmin):
     actions = ['set_dollars', 'set_som']
     search_fields = ['name', 'rating']
     list_filter = ['name', 'currency', RatingFilter]
+    filter_horizontal = ['actors']
 
     @admin.display(ordering='rating', description='Статус фильмов')
     def rating_status(self, movie: Movie):
