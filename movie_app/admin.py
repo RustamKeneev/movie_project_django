@@ -34,8 +34,8 @@ class RatingFilter(admin.SimpleListFilter):
 class MovieAdmin(admin.ModelAdmin):
     # exclude = ['slug']
     prepopulated_fields = {'slug': ('name',)}
-    list_display = ['name', 'rating', 'currency', 'budget', 'rating_status']
-    list_editable = ['rating', 'currency', 'budget']
+    list_display = ['name', 'rating', 'director', 'budget', 'rating_status']
+    list_editable = ['rating', 'director', 'budget']
     ordering = ['rating']
     list_per_page = 3
     actions = ['set_dollars', 'set_som']
